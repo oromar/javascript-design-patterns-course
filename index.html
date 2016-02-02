@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Cat clicker</title>
+
+</head>
+<body>
+	<div>
+		<div style="margin-left:50px;float:left">
+			<label id="cat-01-name">Cat 01 Name</label>
+			<br/>
+			<img id="image-01" src="https://pbs.twimg.com/profile_images/602729491916435458/hSu0UjMC.jpg"/>
+			<br/>
+			<label id="clickCounts-cat-01">Clicks: <span id="count-01">0</span> </label>
+		</div>
+		<div style="margin-left:50px;float:left">
+			<label id="cat-02-name">Cat 02 Name</label>
+			<br/>
+			<img id="image-02" src="http://paws-patas.info/wp-content/uploads/2014/06/cute-cats-pictures-photos-slideshow-20-cats-who-suck-at-reducing-tensions-in-the-israeli-3-300x300.jpg"/>
+			<br/>
+			<label id="clickCounts-cat-02">Clicks: <span id="count-02">0</span> </label>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	document.getElementById('image-01').addEventListener('click', function () {
+		var count = document.getElementById('count-01');
+		count.innerText = Number(count.innerText) + 1;
+	}, false);	
+
+	document.getElementById('image-02').addEventListener('click', function () {
+		var count = document.getElementById('count-02');
+		count.innerText = Number(count.innerText) + 1;
+	}, false);	
+
+</script>	
+</html>
