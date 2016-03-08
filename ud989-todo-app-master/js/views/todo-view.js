@@ -19,7 +19,9 @@ var app = app || {};
 		events: {
 			'click .toggle': 'toggleCompleted',
 			'dblclick label': 'edit',
+			'click .edit-btn': 'edit',
 			'click .destroy': 'clear',
+			'click .priority-btn': 'prioritize',
 			'keypress .edit': 'updateOnEnter',
 			'keydown .edit': 'revertOnEscape',
 			'blur .edit': 'close'
@@ -50,6 +52,7 @@ var app = app || {};
 
 			this.$el.html(this.template(this.model.toJSON()));
 			this.$el.toggleClass('completed', this.model.get('completed'));
+			this.$el.toggleClass('priority', this.model.get('priority'));
 			this.toggleVisible();
 			this.$input = this.$('.edit');
 			return this;
@@ -127,6 +130,11 @@ var app = app || {};
 		// Remove the item, destroy the model from *localStorage* and delete its view.
 		clear: function () {
 			this.model.destroy();
+		},
+
+		//Prioritizes the task.
+		prioritize: function (){
+			this.model.togglePriority()
 		}
 	});
 })(jQuery);
